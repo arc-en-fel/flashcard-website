@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiragana Flashcards</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffcab3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        #flashcard-container {
+            max-width: 400px;
+            width: 90%;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #flashcard {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #pronunciation {
+            font-size: 1.2em;
+            text-align: center;
+            color: #555;
+        }
+
+        #btn-next {
+            background-color: #EE5279;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        #btn-next:hover {
+            background-color: #ff3366;
+        }
+        p {
+            max-width: 600px;
+            width: 90%;
+            margin: 20px auto;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div id="flashcard-container">
+        <div id="flashcard"></div>
+        <div id="pronunciation"></div>
+        <button id="btn-next" onclick="nextFlashcard()">Next</button>
+    </div>
+
+    <script>
+        const hiragana = [
+            { character: 'あ', pronunciation: 'A' }, { character: 'い', pronunciation: 'I' },
+            { character: 'う', pronunciation: 'U' }, { character: 'え', pronunciation: 'E' },
+            { character: 'お', pronunciation: 'O' }, { character: 'か', pronunciation: 'Ka' },
+            { character: 'き', pronunciation: 'Ki' }, { character: 'く', pronunciation: 'Ku' },
+            { character: 'け', pronunciation: 'Ke' }, { character: 'こ', pronunciation: 'Ko' },
+            { character: 'さ', pronunciation: 'Sa' }, { character: 'し', pronunciation: 'Shi' },
+            { character: 'す', pronunciation: 'Su' }, { character: 'せ', pronunciation: 'Se' },
+            { character: 'そ', pronunciation: 'So' }, { character: 'た', pronunciation: 'Ta' },
+            { character: 'ち', pronunciation: 'Chi' }, { character: 'つ', pronunciation: 'Tsu' },
+            { character: 'て', pronunciation: 'Te' }, { character: 'と', pronunciation: 'To' },
+            { character: 'な', pronunciation: 'Na' }, { character: 'に', pronunciation: 'Ni' },
+            { character: 'ぬ', pronunciation: 'Nu' }, { character: 'ね', pronunciation: 'Ne' },
+            { character: 'の', pronunciation: 'No' }, { character: 'は', pronunciation: 'Ha' },
+            { character: 'ひ', pronunciation: 'Hi' }, { character: 'ふ', pronunciation: 'Fu' },
+            { character: 'へ', pronunciation: 'He' }, { character: 'ほ', pronunciation: 'Ho' },
+            { character: 'ま', pronunciation: 'Ma' }, { character: 'み', pronunciation: 'Mi' },
+            { character: 'む', pronunciation: 'Mu' }, { character: 'め', pronunciation: 'Me' },
+            { character: 'も', pronunciation: 'Mo' }, { character: 'や', pronunciation: 'Ya' },
+            { character: 'ゆ', pronunciation: 'Yu' }, { character: 'よ', pronunciation: 'Yo' },
+            { character: 'ら', pronunciation: 'Ra' }, { character: 'り', pronunciation: 'Ri' },
+            { character: 'る', pronunciation: 'Ru' }, { character: 'れ', pronunciation: 'Re' },
+            { character: 'ろ', pronunciation: 'Ro' }, { character: 'わ', pronunciation: 'Wa' },
+            { character: 'を', pronunciation: 'Wo' }, { character: 'ん', pronunciation: 'N' }
+        ];
+
+        const flashcards = [...hiragana];
+
+        let currentFlashcardIndex = 0;
+        const flashcardElement = document.getElementById('flashcard');
+        const pronunciationElement = document.getElementById('pronunciation');
+
+        function showFlashcard(index) {
+            const flashcard = flashcards[index];
+            flashcardElement.innerText = flashcard.character;
+            pronunciationElement.innerText = flashcard.pronunciation;
+        }
+
+        function nextFlashcard() {
+            currentFlashcardIndex = (currentFlashcardIndex +1) % flashcards.length;
+            showFlashcard(currentFlashcardIndex);
+        }
+        
+        
+        // Initial display
+        showFlashcard(currentFlashcardIndex);
+    </script>
+
+    <p>Hiragana is one of the two syllabaries in the Japanese writing system, alongside Katakana. Developed in the Heian period, around the 9th century, hiragana consists of 46 characters, each representing a distinct syllable. It is primarily used for native Japanese words, verb and adjective endings, and grammatical elements. Hiragana is known for its cursive and flowing script, making it an essential component for learners and native speakers alike. Its flexibility and usage in everyday communication, including literature, children's books, and informal writing, highlight its significance in mastering the Japanese language. Whether you're embarking on your journey to learn Japanese or delving into the intricate world of Japanese characters, understanding hiragana is a fundamental step towards language proficiency.</p>
+</body>
+</html>

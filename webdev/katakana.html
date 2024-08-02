@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katakana Flashcards</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffcab3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        #flashcard-container {
+            max-width: 400px;
+            width: 90%;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #flashcard {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #pronunciation {
+            font-size: 1.2em;
+            text-align: center;
+            color: #555;
+        }
+
+        #btn-next {
+            background-color: #EE5279;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        #btn-next:hover {
+            background-color: #ff3366;
+        }
+        p {
+            max-width: 600px;
+            width: 90%;
+            margin: 20px auto;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div id="flashcard-container">
+        <div id="flashcard"></div>
+        <div id="pronunciation"></div>
+        <button id="btn-next" onclick="nextFlashcard()">Next</button>
+    </div>
+
+    <script>
+              const katakana = [
+            { character: 'ア', pronunciation: 'A' }, { character: 'イ', pronunciation: 'I' },
+            { character: 'ウ', pronunciation: 'U' }, { character: 'エ', pronunciation: 'E' },
+            { character: 'オ', pronunciation: 'O' }, { character: 'カ', pronunciation: 'Ka' },
+            { character: 'キ', pronunciation: 'Ki' }, { character: 'ク', pronunciation: 'Ku' },
+            { character: 'ケ', pronunciation: 'Ke' }, { character: 'コ', pronunciation: 'Ko' },
+            { character: 'サ', pronunciation: 'Sa' }, { character: 'シ', pronunciation: 'Shi' },
+            { character: 'ス', pronunciation: 'Su' }, { character: 'セ', pronunciation: 'Se' },
+            { character: 'ソ', pronunciation: 'So' }, { character: 'タ', pronunciation: 'Ta' },
+            { character: 'チ', pronunciation: 'Chi' }, { character: 'ツ', pronunciation: 'Tsu' },
+            { character: 'テ', pronunciation: 'Te' }, { character: 'ト', pronunciation: 'To' },
+            { character: 'ナ', pronunciation: 'Na' }, { character: 'ニ', pronunciation: 'Ni' },
+            { character: 'ヌ', pronunciation: 'Nu' }, { character: 'ネ', pronunciation: 'Ne' },
+            { character: 'ノ', pronunciation: 'No' }, { character: 'ハ', pronunciation: 'Ha' },
+            { character: 'ヒ', pronunciation: 'Hi' }, { character: 'フ', pronunciation: 'Fu' },
+            { character: 'ヘ', pronunciation: 'He' }, { character: 'ホ', pronunciation: 'Ho' },
+            { character: 'マ', pronunciation: 'Ma' }, { character: 'ミ', pronunciation: 'Mi' },
+            { character: 'ム', pronunciation: 'Mu' }, { character: 'メ', pronunciation: 'Me' },
+            { character: 'モ', pronunciation: 'Mo' }, { character: 'ヤ', pronunciation: 'Ya' },
+            { character: 'ユ', pronunciation: 'Yu' }, { character: 'ヨ', pronunciation: 'Yo' },
+            { character: 'ラ', pronunciation: 'Ra' }, { character: 'リ', pronunciation: 'Ri' },
+            { character: 'ル', pronunciation: 'Ru' }, { character: 'レ', pronunciation: 'Re' },
+            { character: 'ロ', pronunciation: 'Ro' }, { character: 'ワ', pronunciation: 'Wa' },
+            { character: 'ヲ', pronunciation: 'Wo' }, { character: 'ン', pronunciation: 'N' }
+        ];
+
+
+        const flashcards = [...katakana];
+
+        let currentFlashcardIndex = 0;
+        const flashcardElement = document.getElementById('flashcard');
+        const pronunciationElement = document.getElementById('pronunciation');
+
+        function showFlashcard(index) {
+            const flashcard = flashcards[index];
+            flashcardElement.innerText = flashcard.character;
+            pronunciationElement.innerText = flashcard.pronunciation;
+        }
+
+        function nextFlashcard() {
+            currentFlashcardIndex = (currentFlashcardIndex +1) % flashcards.length;
+            showFlashcard(currentFlashcardIndex);
+        }
+        
+        
+        // Initial display
+        showFlashcard(currentFlashcardIndex);
+    </script>
+    </script>
+
+    <p>Katakana is one of the two syllabaries in the Japanese writing system, the other being Hiragana. Developed alongside Hiragana, Katakana is also an essential component of written Japanese. It consists of 46 characters, each representing distinct syllables, and shares a similar phonetic structure with Hiragana. While Hiragana is predominantly used for native Japanese words, Katakana is often employed for foreign loanwords, technical or scientific terms, and names of foreign entities.
+
+    Known for its angular and more straightforward script compared to the cursive Hiragana, Katakana is recognizable by its distinct characters. Japanese learners commonly encounter Katakana when reading menus, product labels, or foreign names. Mastery of both Hiragana and Katakana is crucial for comprehensive reading and writing proficiency in the Japanese language.
+    
+    Whether you're exploring the diverse realms of Japanese pop culture, engaging in business communications, or delving into the intricacies of Japanese characters, understanding Katakana is a vital step towards linguistic competence. Its application extends beyond linguistic nuances, reflecting the dynamic and adaptive nature of the Japanese writing system.</p>
+</body>
+</html>

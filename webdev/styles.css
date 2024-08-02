@@ -1,0 +1,65 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffcab3; /* Soft seafoam blue-green background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#flashcard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #7f80e07c; /* White flashcard background */
+    padding: 20px;
+    padding-right: 80px;
+    padding-left: 80px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#flashcard {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #333; /* Dark text color */
+}
+
+#pronunciation {
+    font-size: 18px;
+    color: #555; /* Slightly lighter text color */
+    margin-bottom: 10px;
+}
+
+#btn-next {
+    padding: 10px 20px;
+    background-color: #EE5279; /* Soft pink button */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+#btn-next:hover {
+    background-color: #ff6460; 
+    /* Slightly darker pink button on hover */
+}
+#btn-prev:hover {
+    background-color: #1264df; 
+    /* Slightly darker pink button on hover */
+}
+#btn-speak {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
